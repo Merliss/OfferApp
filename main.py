@@ -102,7 +102,7 @@ class Application(tk.Tk):
             self.response_text.insert(tk.END, "Uzupełnij wszystkie pola.")
             return
         length = int(length)
-        prompt = f"Dodaj opis oferty pracy dla stanowiska z perpsektywy pracodawcy: {self.job_title_entry.get()}, które ma w wymaganich {self.requirements_entry.get()}. Zastosuj styl oferty:{self.cv_style_entry.get()} Wygeneruj maksymalnie {length} znaków."
+        prompt = f"Dodaj opis oferty pracy dla stanowiska z perpsektywy pracodawcy z firmy {self.company_name_entry.get()}. Lokalizacja pracy: {self.location_entry.get()}. Stanowisko: {self.job_title_entry.get()}, które ma w wymaganich {self.requirements_entry.get()}. Zastosuj styl oferty:{self.cv_style_entry.get()} Wygeneruj maksymalnie {length} znaków."
         response = self.get_response_from_api(prompt, length)
         self.response_text.delete('1.0', tk.END)
         self.response_text.insert(tk.END, response)
